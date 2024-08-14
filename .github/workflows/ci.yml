@@ -7,12 +7,14 @@ on:
     branches: [ master ]
 
 jobs:
+  #  name of the job that want to execute
   build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      # copy software from master branch to virtual machine
 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -46,6 +48,7 @@ jobs:
       with:
         name: code-coverage-report
         path: build/reports/jacoco/test/html/**
+        # this one will be saved
         
     - name: Run Deployment
       run: java -jar build/libs/hello-world-java-V1.jar
