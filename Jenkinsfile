@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/nawaf83/hello-world-java1.git'
+                git branch: 'master', url: 'https://github.com/tyfeiiiiiii/hello-world-java1.git'
             }
         }
         stage('Build') {
             steps {
-                bat start gradlew build
+                bat 'gradlew build'
             }
         }
         stage('Test') {
             steps {
-                bat start gradlew test
+                bat 'gradlew test'
             }
         }
         stage('Deploy') {
